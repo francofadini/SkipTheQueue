@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>327457815266-81790jugshccthi3r2lvj97in01ilhmg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.327457815266-81790jugshccthi3r2lvj97in01ilhmg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCBbeuWmyrE8r_5nNUsK3v9yiMJApaTzOg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>327457815266</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.francofadini.SkipTheQueue</string>
+	<key>PROJECT_ID</key>
+	<string>skipthequeue2-b9e31</string>
+	<key>STORAGE_BUCKET</key>
+	<string>skipthequeue2-b9e31.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:327457815266:ios:413e9a67b5d37af3</string>
+	<key>DATABASE_URL</key>
+	<string>https://skipthequeue2-b9e31.firebaseio.com</string>
+</dict>
+</plist>
