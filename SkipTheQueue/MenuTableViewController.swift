@@ -16,7 +16,7 @@ class MenuTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.tableFooterView = UIView()
         self.menu = sellerSelected!.menu
         purchaseController = storyboard!.instantiateViewController(withIdentifier: "purchaseController") as? PurchaseViewController
     }
@@ -46,7 +46,7 @@ class MenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "sellerCell", for: indexPath) as! SellerTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "sellerCellFromMenu", for: indexPath) as! SellerTableViewCell
             cell.nameLabel.text = sellerSelected!.email
             cell.imageSeller.imageFromServerURL(urlString: (sellerSelected?.imageUrl)!)
             return cell
@@ -65,12 +65,14 @@ class MenuTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if purchaseController?.seller == nil {
-           purchaseController?.seller = sellerSelected
+        if indexPath.row > 0 {
+            if purchaseController?.seller == nil {
+                purchaseController?.seller = sellerSelected
+            }
+            purchaseController?.addCombo(menu[indexPath.row-1])
+            let nav = UINavigationController(rootViewController: purchaseController!)
+            self.navigationController?.present(nav, animated: true, completion: nil)
         }
-        purchaseController?.addCombo(menu[indexPath.row-1])
-        let nav = UINavigationController(rootViewController: purchaseController!)
-        self.navigationController?.present(nav, animated: true, completion: nil)
     }
     
     

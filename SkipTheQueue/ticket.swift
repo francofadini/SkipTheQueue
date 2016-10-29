@@ -9,7 +9,7 @@
 import Foundation
 
 class Ticket {
-    static var lastTicket = Ticket()
+    static var lastTicket:Ticket?
     
     let idNumber:Int?
     let seller:Seller?

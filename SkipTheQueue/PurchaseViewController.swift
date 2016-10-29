@@ -24,7 +24,7 @@ class PurchaseViewController: UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
+        self.tableView.tableFooterView = UIView()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Agregar otro", style: .plain, target: self, action: #selector(hide))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Pagar", style: .plain, target: self, action: #selector(self.startCheckout))
     }
@@ -62,16 +62,13 @@ class PurchaseViewController: UIViewController {
 
     func displayPaymentInfo(payment : Payment){
         
-        let paymentInfo = "id : " + String(payment._id) + ",status : " + payment.status + ",status detail : " + payment.statusDetail
+        _ = "id : " + String(payment._id) + ",status : " + payment.status + ",status detail : " + payment.statusDetail
         
         
         let sellersView = self.storyboard?.instantiateViewController(withIdentifier: "sellersController")
         
-        let newTicket = Ticket(idNumber: payment._id, seller: seller! , status: payment.status)
+        Ticket.lastTicket = Ticket(idNumber: payment._id, seller: seller! , status: payment.status)
         let ticketView = storyboard?.instantiateViewController(withIdentifier: "ticketController") as! TicketViewController
-        DispatchQueue.main.async(execute: {
-            ticketView.setNewTicket(ticket: newTicket)
-        })
         self.navigationController?.setViewControllers([sellersView!,ticketView], animated: false)
     }
 }
