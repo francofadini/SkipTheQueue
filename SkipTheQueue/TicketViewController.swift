@@ -39,9 +39,10 @@ class TicketViewController: UIViewController {
         let lat = String(describing: lastTicket!.seller!.coord.coordinate.latitude)
         let lon = String(describing: lastTicket!.seller!.coord.coordinate.longitude)
         if #available(iOS 10.0, *) {
-            UIApplication.shared.open(NSURL(string:"comgooglemaps://?center="+lat+","+lon+"&zoom=14&views=traffic")! as URL, options: [:], completionHandler: nil)
+            UIApplication.shared.open(NSURL(string:"http://maps.google.com/maps?q=loc:"+lat+","+lon)! as URL, options: [:],completionHandler: nil)
+            //UIApplication.shared.open(NSURL(string:"comgooglemaps://?center="+lat+","+lon+"&zoom=14&views=traffic")! as URL, options: [:], completionHandler: nil)
         } else {
-            UIApplication.shared.openURL(NSURL(string:"comgooglemaps://?center="+lat+","+lon+"&zoom=14&views=traffic")! as URL)
+            UIApplication.shared.openURL(NSURL(string:"http://maps.google.com/maps?q=loc:"+lat+","+lon)! as URL)
         }
     }
 
